@@ -5,7 +5,7 @@ module.exports = function getZerosCount(number, base) {
     number = (number / tempArr[0]) | 0;
     res += number;
   };
-  res = res / tempArr[1];
+  res = Math.floor(res / tempArr[1]);
 
   function getMaxPrime(x) {
     var j = 0;
@@ -26,10 +26,11 @@ module.exports = function getZerosCount(number, base) {
     a[j] = i;
     max = getMaxOfArray(a);
     for (var i = 0; i < a.length; i++) {
-      if ( a[i].includes(max) ) {
+      if ( max == a[i] ) {
         counter++;
       }
     }
+    console.log([max, counter]);
     return [max, counter]
   }
 
